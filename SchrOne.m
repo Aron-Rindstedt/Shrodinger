@@ -1,5 +1,10 @@
 % Outline of One-dimensional Schroedinger solver
 % with time-dependent boundaries.
+% 
+% Semi-discrete form:
+% v_t = -(if^2*D_2)v-(fp*I*D_1)
+% 
+% Time discretisation is done with RK4
 %
 % v = solution matrix
 % N = Space/Time resolution
@@ -10,11 +15,19 @@ function v = SchrOne(N)
     t1 = 2*pi;
     
     t = t0;
-    x0 = linspace(-2-cos(t),2+cos(t),N+1);
+    
+    x = linspace(-1,1,N+1);
+
+    % f  = Time-dependent scaling
+    % fp = Derivative of time-dependent scaling
+    
+    v = zeros(2*(N+1),N+1);
+    % v(:,1) = initial values
+    
     
 % Construct SBP-SAT operators
 
-    % [D,D2,H] = SBP(N)
+    % [D,D2,H] = SBP(N,h);
     
     
 % Runge-Kutta 4 loop
