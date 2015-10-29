@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+
+\title{Titel \\}
+\author{Aron, Fredrik Lauren}
+\date{October 2015}
+
+\begin{document}
+
+\maketitle
+
+\section{Well-posed system}
+The 2-D Shrodinger equation 
+\begin{equation}\label{eq:schrodinger}
+u_t = -iu_{xx} + -iu_{yy} + -iuF
+\end{equation}
+
+Performing a time-dependent coordinate transformation of the form
+
+\begin{equation}
+\begin{array}{ccc}
+ x = x(\tau,\alpha,\beta), & y = y(\tau,\alpha,\beta), & t = \tau \\
+ \alpha = \alpha(t,x,y), & \beta = \beta(t,x,y) & t = \tau
+\end{array}
+\end{equation}
+
+This leads to the transformation
+
+\begin{equation}\label{eq:shrodinger_transf}
+u_\tau = -iu_{\alpha \alpha} \alpha^2_x -iu_\alpha \alpha_{xx} - iu_{\beta \beta} \beta^2_y -iu_\beta \beta_{yy} - u_\alpha \alpha_t - u_\beta \beta_t - iuF
+\end{equation}
+
+The coordinate transformation is representing a box with changing boundaries. The boundaries of the box are parallel to the x and y-axis, Because of this, 
+
+\begin{equation}
+\begin{array}{ccc}
+ x = x(\tau,\alpha), & y = y(\tau,\beta), & t = \tau \\
+ \alpha = \alpha(t,x), & \beta = \beta(t,y) & t = \tau
+\end{array}
+\end{equation}
+
+and this leads to $\alpha_{xx} = \beta_{yy} = 0$. Equation \eqref{eq:shrodinger_transf} can then be simplified to 
+
+\begin{equation}\label{eq:shrodinger_transf_2}
+u_\tau = -iu_{\alpha \alpha} \alpha^2_x  - iu_{\beta \beta} \beta^2_y - u_\alpha \alpha_t - u_\beta \beta_t - iuF
+\end{equation}
+
+and in 1D 
+
+\begin{equation}\label{eq:shordinger_1D}
+u_\tau = -iu_{\alpha \alpha} \alpha^2_x  -  u_\alpha \alpha_t - iuF
+\end{equation}
+
+Consider the coordinate transformation on the form 
+
+\begin{equation}\label{eq:x_alpha}
+\alpha = h(t) x
+\end{equation}
+
+where \textit{h(t)} is a function of time. This gives $\alpha_x = h(t)$ and \eqref{eq:shordinger_1D} becomes 
+
+\begin{equation}
+u_\tau = -iu_{\alpha \alpha} h(t)^2  -  u_\alpha h'(t) - iuF
+\end{equation}
+
+
+
+\end{document}
